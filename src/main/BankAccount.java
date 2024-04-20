@@ -42,7 +42,7 @@ public class BankAccount {
 			return;
 		}
 		this.balance += amount;
-		System.out.println("Your account balance is now $" + NumberFormat.getCurrencyInstance().format(this.balance));
+		System.out.println("Your account balance is now " + NumberFormat.getCurrencyInstance().format(this.balance));
 	}
 	
 	// Will withdraw if a balance greater than 0 is provided.
@@ -52,7 +52,7 @@ public class BankAccount {
 			return;
 		}
 		this.balance -= amount;
-		System.out.println("Your account balance is now $" + NumberFormat.getCurrencyInstance().format(this.balance) );
+		System.out.println("Your account balance is now " + NumberFormat.getCurrencyInstance().format(this.balance) );
 	}
 	
 	// Prints all account information
@@ -60,6 +60,6 @@ public class BankAccount {
 		System.out.println("AccountId: " + this.accountID);
 		System.out.println("First name: " + this.firstName);
 		System.out.println("Last name: " + this.lastName);
-		System.out.println("Balance: " + this.balance);
+		System.out.println("Balance: " + NumberFormat.getCurrencyInstance().format(this.balance));
 	}
 }
