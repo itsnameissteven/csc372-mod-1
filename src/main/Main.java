@@ -4,10 +4,12 @@ import java.util.Scanner;
 public class Main {
 	public static void main(String[] args) {
 		try(Scanner scnr = new Scanner(System.in)){
+			// Get information for bank account
 			String firstName = getNameInput(scnr, true);
 			String lastName = getNameInput(scnr, false);
 			CheckingAccount checkingAccount = new CheckingAccount(firstName, lastName, 6.7);
-			
+
+			// Loop the program allowing the user to have multiple interactions.
 			while (true) {		
 				System.out.println("What would you like to do? Enter number.");
 				System.out.println("1) Deposit money");
@@ -46,6 +48,7 @@ public class Main {
 		}
 	}
 
+	// Prompts a user for first or last name and returns input
 	public static String getNameInput(Scanner scnr, boolean isFirstName) {
 		String nameType = isFirstName ? "first" : "last";
 		while (true) {
