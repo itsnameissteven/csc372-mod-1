@@ -1,17 +1,18 @@
 package main;
 import java.util.Scanner; 
 
-public class Main {
-	public static void main(String[] args) {
+public class Main {	public static void main(String[] args) {
 		try(Scanner scnr = new Scanner(System.in)){
 			// Get information for bank account
 			String firstName = getNameInput(scnr, true);
 			String lastName = getNameInput(scnr, false);
 			CheckingAccount checkingAccount = new CheckingAccount(firstName, lastName, 6.7);
+			System.out.println("\n\rBank created bank details:");
+			checkingAccount.accountSummary();
 
 			// Loop the program allowing the user to have multiple interactions.
 			while (true) {		
-				System.out.println("What would you like to do? Enter number.");
+				System.out.println("\n\rWhat would you like to do? Enter number.");
 				System.out.println("1) Deposit money");
 				System.out.println("2) Withdraw money");
 				System.out.println("3) Display account information");
