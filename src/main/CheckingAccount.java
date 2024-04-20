@@ -3,7 +3,8 @@ package main;
 public class CheckingAccount extends BankAccount {
 	private double interestRate;
 	
-	public CheckingAccount(String firstName, String lastName, double interestRate) {
+	// Extend superclass and add interest rate to instantiation.
+	CheckingAccount(String firstName, String lastName, double interestRate) {
 		super(firstName, lastName);
 		this.interestRate = interestRate;
 	}
@@ -17,6 +18,7 @@ public class CheckingAccount extends BankAccount {
 	}
 	
 	// Methods
+	// Withdraw fee of 30 if account is less than 0.
 	public void processWithdrawal(double amount) {
 		if(amount > getBalance()) {
 			System.out.println("Overdraft fee charged -- $30");
@@ -26,9 +28,10 @@ public class CheckingAccount extends BankAccount {
 		}
 	}
 	
+	// Extend superclass display adding the interest rate
 	public void displayAccount() {
 		accountSummary();
-		System.out.println("Interest rate: " + this.interestRate);
+		System.out.println("Interest rate: %" + getInterestRate());
 	}
 
 }
