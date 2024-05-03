@@ -19,7 +19,7 @@ public class CheckingAccount extends BankAccount {
 	
 	// Methods
 	// Withdraw fee of 30 if account is less than 0.
-	public void processWithdrawal(double amount) {
+	public void processWithdrawal(double amount) throws InvalidInputException {
 		if(amount > getBalance()) {
 			System.out.println("Overdraft fee charged -- $30");
 			withdrawal(amount + 30);
@@ -31,7 +31,7 @@ public class CheckingAccount extends BankAccount {
 	// Extend superclass display adding the interest rate
 	public void displayAccount() {
 		accountSummary();
-		System.out.println("Interest rate: %" + getInterestRate());
+		System.out.println("Interest rate: " + getInterestRate() +"%");
 	}
 
 }

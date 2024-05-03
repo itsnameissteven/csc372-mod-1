@@ -33,23 +33,24 @@ public class BankAccount {
 	public void setAccountId(int accountID) {
 		this.accountID = accountID;
 	}
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
 	
 	// Methods 
 	// Will deposit if amount greater than 0 is provided.
-	public void deposit(double amount) {
+	public void deposit(double amount) throws InvalidInputException {
 		if(amount <= 0.0) {
-			System.out.println("Deposit amount must be greater than 0.");
-			return;
+			throw new InvalidInputException("Deposit amount must be greater than 0.");
 		}
 		this.balance += amount;
 		System.out.println("Your account balance is now " + NumberFormat.getCurrencyInstance().format(this.balance));
 	}
 	
 	// Will withdraw if a balance greater than 0 is provided.
-	public void withdrawal(double amount) {
+	public void withdrawal(double amount) throws InvalidInputException {
 		if(amount <= 0.0) {
-			System.out.println("Withdrawal amount must be greater than 0");
-			return;
+			throw new InvalidInputException("Withdrawal amount must be greater than 0");
 		}
 		this.balance -= amount;
 		System.out.println("Your account balance is now " + NumberFormat.getCurrencyInstance().format(this.balance) );

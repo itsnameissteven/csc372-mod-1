@@ -64,7 +64,7 @@ public class Main {	public static void main(String[] args) {
 		}
 	}
 	
-	
+	// Prompts user to input amount to deposit and adds amount to account
 	public static void depositMoney(Scanner scnr, CheckingAccount checkingAccount) {
 		try {
 			System.out.println("How much would you like to deposit?");
@@ -75,6 +75,7 @@ public class Main {	public static void main(String[] args) {
 		}
 	}
 	
+		// Prompts user to input amount to withdraw and subtracts amount to account
 	public static void withdrawMoney(Scanner scnr, CheckingAccount checkingAccount) {
 		try {
 			System.out.println("How much would you like to withdraw?");
